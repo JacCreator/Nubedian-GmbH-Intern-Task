@@ -13,6 +13,11 @@ public class CpuServiceImpl implements CpuService {
     private CpuRepository cpuRepository;
 
     @Override
+    public Cpu saveCpu(Cpu cpu) {
+        return cpuRepository.save(cpu);
+    } //TODO later
+
+    @Override
     public List<Cpu> getAllCpus() {
         return cpuRepository.findAll();
     }

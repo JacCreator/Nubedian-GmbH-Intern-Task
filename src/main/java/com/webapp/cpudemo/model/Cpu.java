@@ -43,7 +43,7 @@ public class Cpu {
     @Column(name="price", nullable=false)
     private BigDecimal price;
     @NonNull
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="socketId", nullable=false)
     private Socket socket;
 }

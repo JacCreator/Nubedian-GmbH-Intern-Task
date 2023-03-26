@@ -13,6 +13,12 @@ public class CpuController {
     @Autowired
     private CpuService cpuService;
 
+    @PostMapping("/add")
+    public String add(@RequestBody Cpu cpu) {
+        cpuService.saveCpu(cpu);
+        return "New cpu is added";
+    } //TODO later
+
     @GetMapping("/get-all")
     public List<Cpu> getAllCpus() {
         return cpuService.getAllCpus();
