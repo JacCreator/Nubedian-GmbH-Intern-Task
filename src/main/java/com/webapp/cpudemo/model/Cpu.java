@@ -40,7 +40,7 @@ public class Cpu {
     @Column(name="tdp", nullable=false)
     private BigDecimal tdp;
     @NonNull
-    @Column(name="price", nullable=false, precision=4)
+    @Column(name="price", nullable=false)
     private BigDecimal price;
     @NonNull
     @ManyToOne(fetch = FetchType.LAZY)
