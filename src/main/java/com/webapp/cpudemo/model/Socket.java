@@ -1,5 +1,7 @@
 package com.webapp.cpudemo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,6 +11,8 @@ import java.util.Set;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @ToString
+@Setter
+@Getter
 @Entity
 @Table(name="socket")
 public class Socket {
@@ -22,9 +26,9 @@ public class Socket {
     private String name;
 
     @OneToMany(
-            mappedBy="socket",
+            //mappedBy="socket"
             cascade=CascadeType.ALL,
-            orphanRemoval = true // I am not sure here :(
+            orphanRemoval = true
     )
-    @Setter private Set<Cpu> cpus = new HashSet<>();
+    private Set<Cpu> cpus = new HashSet<>();
 }

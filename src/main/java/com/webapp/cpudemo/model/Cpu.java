@@ -1,5 +1,8 @@
 package com.webapp.cpudemo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,10 +12,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @ToString
-@Entity
-@Table(name="cpu")
 @Setter
 @Getter
+@Entity
+@Table(name="cpu")
 public class Cpu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,4 +49,10 @@ public class Cpu {
     @ManyToOne
     @JoinColumn(name="socketId", nullable=false)
     private Socket socket;
+
+    /*@JsonProperty("socket")
+    private void unpackNested(Integer id) {
+        this.socket = new Socket();
+        socket.setId(id);
+    }*/
 }
