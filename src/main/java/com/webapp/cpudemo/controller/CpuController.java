@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/cpu")
-@CrossOrigin(origins="http://localhost:5173")
+@CrossOrigin(origins="http://localhost:3000")
 public class CpuController {
     @Autowired
     private CpuService cpuService;

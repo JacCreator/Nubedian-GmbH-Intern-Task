@@ -25,6 +25,7 @@ public class Socket {
     @Column(name="name", nullable=false, unique=true)
     private String name;
 
+    @JsonIgnore
     @OneToMany(
             //mappedBy="socket"
             cascade=CascadeType.ALL,

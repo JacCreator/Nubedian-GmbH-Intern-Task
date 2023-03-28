@@ -38,7 +38,7 @@ public class Cpu {
     private int coresNum;
     @NonNull
     @Column(name="threadsNum", nullable=false)
-    private int threasdNum;
+    private int threadsNum;
     @NonNull
     @Column(name="tdp", nullable=false)
     private BigDecimal tdp;
