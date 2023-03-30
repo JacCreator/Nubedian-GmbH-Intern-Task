@@ -49,10 +49,4 @@ public class Cpu {
     @ManyToOne
     @JoinColumn(name="socketId", nullable=false)
     private Socket socket;
-
-    /*@JsonProperty("socket")
-    private void unpackNested(Integer id) {
-        this.socket = new Socket();
-        socket.setId(id);
-    }*/
 }
